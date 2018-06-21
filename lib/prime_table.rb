@@ -7,7 +7,7 @@ class PrimeTable
     multiplicands = []
 
     while multiplicands.length < multiplicand_length
-      multiplicands << value if is_prime_number?(value)
+      multiplicands << value if prime_number?(value)
       value += 1
     end
 
