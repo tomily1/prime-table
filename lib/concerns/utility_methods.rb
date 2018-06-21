@@ -3,10 +3,8 @@ module UtilityMethods
     divisor = []
 
     (1..value).each do |number|
-      if value % number == 0
-        divisor << number
-      end
+      divisor << number if value % number == 0
     end
-    divisor.length > 2 ? false : true
+    divisor.length <= 2
   end
 end

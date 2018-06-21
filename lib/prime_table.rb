@@ -7,9 +7,7 @@ class PrimeTable
     multiplicands = []
 
     while multiplicands.length < multiplicand_length
-      if is_prime_number?(value)
-        multiplicands << value
-      end
+      multiplicands << value if is_prime_number?(value)
       value += 1
     end
 
@@ -21,21 +19,20 @@ class PrimeTable
     columns = rows
 
     print "\n\n\n"
-    print "                PRIME NUMBERS MULTIPLICATION TABLE"
+    print '                PRIME NUMBERS MULTIPLICATION TABLE'
     print "\n\n\n"
 
-    print "  X    "
-    columns.each {|column| print " %-4d " % column}
+    print '  X    '
+    columns.each { |column| print format(' %-4d ', column) }
     print "\n\n"
 
     rows.each do |row|
-      print "  %-2d | " % row
-      columns.each do |column| 
+      print format('  %-2d | ', row)
+      columns.each do |column|
         result = column * row
-        print " %-4d " % (result)
+        print format(' %-4d ', result)
       end
       print "\n\n"
     end
   end
 end
-
